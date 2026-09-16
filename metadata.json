@@ -1,0 +1,6 @@
+{
+  "name": "키오스크 안내 화면",
+  "description": "갤러리예지향 결제 실수를 줄이는 키오스크 안내 및 일일 마감 정산 보조 도구",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.2s ease-out forwards;
+}
+
+/* A4 Single Page Print Stylesheet */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #1c1917 !important;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, headers, tabs, buttons, footers */
+  header,
+  footer,
+  nav,
+  button,
+  #mobile-preview-toggle,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Ensure parent containers do not clip content during print */
+  div {
+    overflow: visible !important;
+  }
+
+  /* Make sure container fits A4 */
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  #printable-proposal-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-page-fit {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Ensure high-contrast borders and text for crisp printing */
+  .border {
+    border-color: #d6d3d1 !important;
+  }
+  
+  .bg-stone-50 {
+    background-color: #f8fafc !important;
+  }
+}
